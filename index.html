@@ -993,8 +993,19 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-   
- 
+    // Form submit placeholder
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#2a6a2a';
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
 
 </body>
 </html>
